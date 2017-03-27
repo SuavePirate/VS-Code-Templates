@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>rcmd</Title>
+			<Shortcut>rcmd</Shortcut>
+			<Description>Code snippet for an automatically implemented relay command
+Language Version: C# 3.0 or higher</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>Field name</ToolTip>
+					<Default>_myField</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[private ICommand $field$;
+
+	public ICommand $property$
+	{
+		get 
+		{ 
+			return $field$ ??
+				($field$ = new RelayCommand(() => { $end$ }));
+		}
+	}
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
